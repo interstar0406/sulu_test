@@ -1,0 +1,18 @@
+version: '1'
+
+services:
+    sulu_cms:
+        build: .
+        working_dir: /var/www
+        entrypoint: 'bash -c'
+        #    user: "${UID}:${GID}"
+        volumes:
+            # - ./supervisor.conf:/etc/supervisor/conf.d/app.conf
+            - .:/var/www
+            # - ./php.ini:/usr/local/etc/php/php.ini
+        ports:
+            - 9100:9100
+            - 9300:9300
+            - 10000:10000
+
+
